@@ -1,8 +1,14 @@
 module com.example.proyectofinal {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.mongodb.driver.sync.client;
+    requires org.mongodb.bson;
+    requires org.mongodb.driver.core;
+    requires java.sql;
 
+    opens app to javafx.fxml;
+    exports app;
 
-    opens com.example.proyectofinal to javafx.fxml;
-    exports com.example.proyectofinal;
+    exports controller;
+    opens controller to javafx.fxml;
 }

@@ -1,0 +1,187 @@
+.root{
+
+    -fx-font-family: "Segoe UI";
+
+    -fx-background-color: #F4F6F9;
+
+}
+
+/*==========================
+        TITULOS
+===========================*/
+
+.titulo{
+
+    -fx-font-size:28;
+
+    -fx-font-weight:bold;
+
+    -fx-text-fill:#1B2A41;
+
+}
+
+.subtitulo{
+
+    -fx-font-size:16;
+
+    -fx-text-fill:#6B7280;
+
+}
+
+/*==========================
+        PANELES
+===========================*/
+
+.panel{
+
+    -fx-background-color:white;
+
+    -fx-background-radius:10;
+
+    -fx-border-radius:10;
+
+    -fx-border-color:#D9DEE5;
+
+}
+
+/*==========================
+        BOTONES
+===========================*/
+
+.button{
+
+    -fx-background-color:#2D6CDF;
+
+    -fx-text-fill:white;
+
+    -fx-font-size:14;
+
+    -fx-font-weight:bold;
+
+    -fx-background-radius:5;
+
+    -fx-cursor:hand;
+
+}
+
+.button:hover{
+
+    -fx-background-color:#1D5ACC;
+
+}
+
+.btnEliminar{
+
+    -fx-background-color:#D9534F;
+
+}
+
+.btnEliminar:hover{
+
+    -fx-background-color:#C9302C;
+
+}
+
+.btnEditar{
+
+    -fx-background-color:#F0AD4E;
+
+}
+
+.btnEditar:hover{
+
+    -fx-background-color:#EC971F;
+
+}
+
+.btnActualizar{
+
+    -fx-background-color:#5CB85C;
+
+}
+
+.btnActualizar:hover{
+
+    -fx-background-color:#449D44;
+
+}
+
+/*==========================
+        CAMPOS
+===========================*/
+
+.text-field{
+
+    -fx-background-radius:5;
+
+    -fx-border-radius:5;
+
+    -fx-border-color:#C9CED6;
+
+    -fx-background-color:white;
+
+    -fx-padding:8;
+
+}
+
+.text-field:focused{
+
+    -fx-border-color:#2D6CDF;
+
+}
+
+/*==========================
+        TABLEVIEW
+===========================*/
+
+.table-view{
+
+    -fx-background-color:white;
+
+    -fx-border-color:#D9DEE5;
+
+    -fx-border-radius:5;
+
+}
+
+.table-view .column-header{
+
+    -fx-background-color:#2D6CDF;
+
+}
+
+.table-view .column-header-background{
+
+    -fx-background-color:#2D6CDF;
+
+}
+
+.table-view .column-header .label{
+
+    -fx-text-fill:white;
+
+    -fx-font-weight:bold;
+
+}
+
+.table-row-cell{
+
+    -fx-background-color:white;
+
+}
+
+.table-row-cell:filled:selected{
+
+    -fx-background-color:#D6E8FF;
+
+}
+
+/*==========================
+        LABELS
+===========================*/
+
+.label{
+
+    -fx-text-fill:#1F2937;
+
+}

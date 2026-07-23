@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.EmpleadoController"
+            stylesheets="@../css/estilos.css">
+
+    <top>
+        <VBox alignment="CENTER" spacing="10" styleClass="panel">
+            <Label text="Registro de Libros"
+                   styleClass="titulo"/>
+        </VBox>
+    </top>
+
+    <center>
+
+        <VBox spacing="15" >
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <GridPane hgap="10" vgap="10">
+
+                <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtId"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="1"/>
+
+                <Label text="Título:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtTitulo"
+                           GridPane.rowIndex="1"
+                           GridPane.columnIndex="1"/>
+
+                <Label text="Autor:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtAutor"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="1"/>
+
+                <Label text="Año:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtAnio"
+                           GridPane.rowIndex="3"
+                           GridPane.columnIndex="1"/>
+
+                <Label text="ISBN:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtISBN"
+                           GridPane.rowIndex="4"
+                           GridPane.columnIndex="1"/>
+
+                <Label text="Género:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtGenero"
+                           GridPane.rowIndex="5"
+                           GridPane.columnIndex="1"/>
+
+            </GridPane>
+
+            <HBox spacing="15" alignment="CENTER">
+
+                <Button text="Guardar"
+                        onAction="#guardar"/>
+
+                <Button text="Editar"
+                        onAction="#editar"/>
+
+                <Button text="Eliminar"
+                        onAction="#eliminar"/>
+
+                <Button text="Limpiar"
+                        onAction="#limpiar"/>
+
+                <Button text="Volver a Visualizar" styleClass="btnActualizar" onAction="#ex"/>
+
+            </HBox>
+
+            <TableView fx:id="tablaLibros">
+
+                <columns>
+
+                    <TableColumn fx:id="colId" text="ID"/>
+
+                    <TableColumn fx:id="colTitulo" text="Título"/>
+
+                    <TableColumn fx:id="colAutor" text="Autor"/>
+
+                    <TableColumn fx:id="colAnio" text="Año"/>
+
+                    <TableColumn fx:id="colISBN" text="ISBN"/>
+
+                    <TableColumn fx:id="colGenero" text="Género"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

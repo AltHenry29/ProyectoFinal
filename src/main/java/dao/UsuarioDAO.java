@@ -1,28 +1,47 @@
 package dao;
 
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import db.Conexion;
-import org.bson.Document;
-import com.mongodb.client.model.Filters;
+import model.Usuario;
+
+import java.sql.*;
 
 public class UsuarioDAO {
 
-    public boolean login(String usuario, String password) {
+    public Usuario login(String usuario, String password){
 
-        Conexion conexion = new Conexion();
-        MongoDatabase db = conexion.getDatabase();
+        String sql = "SELECT * FROM usuarios WHERE usuario=? AND password=?";
 
-        MongoCollection<Document> coleccion =
-                db.getCollection("usuarios");
+        try(Connection con = Conexion.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql)){
 
-        Document doc = coleccion.find(
-                Filters.and(
-                        Filters.eq("usuario", usuario),
-                        Filters.eq("password", password)
-                )
-        ).first();
+            ps.setString(1, usuario);
+            ps.setString(2, password);
 
-        return doc != null;
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+
+                return new Usuario(
+
+                        rs.getInt("id"),
+                        rs.getString("nombre"),
+                        rs.getString("apellido"),
+                        rs.getString("usuario"),
+                        rs.getString("password"),
+                        rs.getString("rol")
+
+                );
+
+            }
+
+        }catch(SQLException e){
+
+            e.printStackTrace();
+
+        }
+
+        return null;
+
     }
+
 }

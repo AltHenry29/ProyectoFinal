@@ -1,23 +1,32 @@
 package db;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoDatabase;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Conexion {
 
-    String URI =
-            "mongodb+srv://dplxlv:12345@cluster0.qlhz9h3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    protected static final String url = "jdbc:mysql://root:ZlsbPteGiLbZMGLVKLgVYTSXXBsCopDA@sakura.proxy.rlwy.net:34937/railway";
 
-    MongoClient cliente =
-            MongoClients.create(URI);
+    protected static final String user = "root";
 
-    public MongoDatabase getDatabase() {
-        return cliente.getDatabase("Biblioteca");
+    protected static final String password = "ZlsbPteGiLbZMGLVKLgVYTSXXBsCopDA";
+
+    public static Connection getConnection() {
+
+        try {
+            return DriverManager.getConnection(url,user,password);
+
+        } catch (SQLException e) {
+
+            System.out.println("Error de conexión");
+
+            e.printStackTrace();
+
+            return null;
+
+        }
+
     }
 
-    public static void main(String[] args) {
-        Conexion conexion = new Conexion();
-        System.out.println(conexion.getDatabase().getName());
-    }
 }
